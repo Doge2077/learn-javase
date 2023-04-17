@@ -1,12 +1,8 @@
-# JAVA  语法基础
+# 1. Java 初识
 
 ****
 
-## 1. Java 初识
-
-****
-
-### 1.1 第一个Java程序
+## 1.1 第一个Java程序
 
 ****
 
@@ -48,7 +44,7 @@ public class HelloWorld {
 
 ****
 
-### 1.2 注释
+## 1.2 注释
 
 ****
 
@@ -84,7 +80,7 @@ public class HelloWorld {
 
 ****
 
-### 1.3 输入和输出
+## 1.3 输入和输出
 
 ****
 
@@ -109,7 +105,7 @@ public class Main{
 
 ****
 
-#### 1.3.1 输入
+## 1.3.1 输入
 
 ****
 
@@ -145,7 +141,7 @@ public class Main {
 
 ****
 
-#### 1.3.2 输出
+## 1.3.2 输出
 
 ****
 
@@ -180,11 +176,11 @@ public class Main {
 
 ****
 
-## 2. 数据类型
+# 2. 数据类型
 
 ****
 
-### 2.1 变量
+## 2.1 变量
 
 ****
 
@@ -211,7 +207,7 @@ public class Main {
 
 ****
 
-### 2.2 内置数据类型
+## 2.2 内置数据类型
 
 ****
 
@@ -300,7 +296,7 @@ public class Main {
 
 ****
 
-### 2.3 特殊转义字符
+## 2.3 特殊转义字符
 
 ****
 
@@ -323,7 +319,7 @@ public class Main {
 
 ****
 
-### 2.4 常量
+## 2.4 常量
 
 ****
 
@@ -342,11 +338,11 @@ public class Main {
 
 ****
 
-### 2.5 类型转换
+## 2.5 类型转换
 
 ****
 
-#### 2.5.1 自动类型转换
+## 2.5.1 自动类型转换
 
 ****
 
@@ -360,7 +356,7 @@ public class Main {
 
 ```java
 低  ----------------------------------------->  高
-byte,short,char —> int —> long —> float —> double 
+byte, short, char —> int —> long —> float —> double 
 ```
 
 -  不能对 `boolean` 类型进行类型转换。
@@ -407,7 +403,7 @@ public class Main{
 
 ****
 
-#### 2.5.2 强制类型转换
+## 2.5.2 强制类型转换
 
 ****
 
@@ -439,11 +435,11 @@ public class Main{
 
 ****
 
-## 3. 运算符
+# 3. 运算符
 
 ****
 
-### 3.1 算数运算符
+## 3.1 算数运算符
 
 ****
 
@@ -475,7 +471,7 @@ public class Main{
 
 ****
 
-### 3.2 赋值运算符
+## 3.2 赋值运算符
 
 ****
 
@@ -498,7 +494,7 @@ public class Main{
 
 ****
 
-### 3.3 比较运算符
+## 3.3 比较运算符
 
 ****
 
@@ -524,7 +520,7 @@ public class Main{
 
 ****
 
-### 3.4 逻辑运算符
+## 3.4 逻辑运算符
 
 ****
 
@@ -542,7 +538,7 @@ public class Main{
 
 ****
 
-### 3.5 位运算符
+## 3.5 位运算符
 
 ****
 
@@ -560,7 +556,7 @@ public class Main{
 | 取反 | `~`    | $\sim$                | 按位取反，即对应的 $0$ 变为 $1$， $1$ 变为 $0$ |
 | 异或 | `^`    | $\oplus$              | 只有两个对应位不同时才为 $1$                   |
 
-```c++
+```java
 &  //与运算
 0 & 0 = 0 ;
 0 & 1 = 0 ;
@@ -593,7 +589,7 @@ n << k  //表示 n * 2*k
 
 **常用模板**
 
-```c++
+```java
 //求x的第k位数字
 x >> k & 1 ;
 
@@ -603,7 +599,7 @@ x & -x ;
 
 ****
 
-### 3.6  逗号运算符
+## 3.6  逗号运算符
 
 ****
 
@@ -617,7 +613,7 @@ x & -x ;
 
 ****
 
-### 3.7 运算符优先级
+## 3.7 运算符优先级
 
 ****
 
@@ -633,7 +629,7 @@ x & -x ;
 
 ****
 
-## 4. 程序流程结构
+# 4. 程序流程结构
 
 ****
 
@@ -645,11 +641,11 @@ x & -x ;
 
 ****
 
-### 4.1 选择结构
+## 4.1 选择结构
 
 ****
 
-#### 4.1.1 if语句
+## 4.1.1 if语句
 
 ****
 
@@ -661,7 +657,7 @@ x & -x ;
 
 **基本 if 语句**：
 
-```c
+```java
 if(条件表达式){
     //语句
 }
@@ -669,28 +665,18 @@ if(条件表达式){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main(){
-
-    int a;  //定义一个int型变量a
-
-    scanf("%d", &a);  //读入a的值
-
-    if(a != 0){  //如果a的值不为0
-        printf("%d\n", a);  //输出a的值并输出一个回车
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 1;
+        if(a > b) System.out.println("a is bigger to b");
     }
-
-    //若a的值为0，则不会执行任何内容，程序正常退出
-
-    return 0;
 }
 ```
 
 **if...else 语句**：
 
-```c
+```java
 if(条件表达式){
 	//语句1
 }
@@ -701,29 +687,19 @@ else{
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main(){
-
-    int a;  //定义一个int型变量a
-
-    scanf("%d", &a);  //读入a的值
-
-    if(a != 0){  //如果a的值不为0
-        printf("%d\n", a);  //输出a的值并输出一个回车
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 100;
+        if(a > b) System.out.println("a is bigger to b");
+        else System.out.println("a is smaller to b");
     }
-    else{
-        printf("a的值为0！\n");  //若a的值为0，输出"a的值为0！"并输出一个回车
-    }
-
-    return 0;
 }
 ```
 
 **else if 语句**：
 
-```c
+```java
 if(条件表达式1){
 		//语句1
 	}
@@ -737,30 +713,14 @@ if(条件表达式1){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main(){
-
-    int a;  //定义一个int型变量a
-
-    scanf("%d", &a);  //读入a的值
-
-    if(a > 100){  //如果a的值大于100
-        printf("%d\n", a - 100);  //输出a - 100的值并输出一个回车
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 100, b = 100;
+        if(a > b) System.out.println("a is bigger to b");
+        else if(a == b) System.out.println("a is equal to b");
+        else System.out.println("a is smaller to b");
     }
-    else if(a > 0 && a <= 100){  //如果a的值大于0且a的值小于等于100
-        printf("%d\n", a + 100);  //输出a + 100的值并输出一个回车
-    }
-    else if(a == 0){  //若a的值为0
-        printf("a的值为0！\n");  //输出"a的值为0！"并输出一个回车
-    }
-    else{
-        printf("a的值为小于0！\n");  //若a的值不满足以上所有条件，输出"a的值小于0！"并输出一个回车
-    }
-    
-
-    return 0;
 }
 ```
 
@@ -768,38 +728,22 @@ int main(){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main(){
-
-    int a;  //定义一个int型变量a
-
-    scanf("%d", &a);  //读入a的值
-
-    if(a > 0){
-        if(a > 100){  //如果a的值大于100
-            printf("%d\n", a - 100);  //输出a - 100的值并输出一个回车
-        }
-        else{
-            printf("%d\n", a + 100);  //输出a + 100的值并输出一个回车
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 100;
+        if(a > b) System.out.println("a is bigger to b");
+        else {
+            if(a == b) System.out.println("a is equal to b");
+            else System.out.println("a is smaller to b");
         }
     }
-    else if(a == 0){  //若a的值为0
-        printf("a的值为0！\n");  //输出"a的值为0！"并输出一个回车
-    }
-    else{
-        printf("a的值为小于0！\n");  //若a的值不满足以上所有条件，输出"a的值小于0！"并输出一个回车
-    }
-    
-
-    return 0;
 }
 ```
 
 ****
 
-#### 4.1.2 三目运算符
+## 4.1.2 三目运算符
 
 ****
 
@@ -818,26 +762,19 @@ int main(){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main(){
-
-    int a;  //定义一个int型变量a
-
-    scanf("%d", &a);  //读入a的值
-
-    int c = a > 0 ? a : -a;  //若a的值大于0则c = a，否则c = -a
-
-    printf("%d\n", c);
-
-    return 0;
+```java
+public class Main {
+    public static void main(String[] args) {
+        int a = 100;
+        int c = a > 10 ? -1 : a;  // 三目运算
+        System.out.println(c);
+    }
 }
 ```
 
 ****
 
-#### 4.1.3 switch语句
+## 4.1.3 switch语句
 
 ****
 
@@ -847,7 +784,7 @@ int main(){
 
 **语法：**
 
-```c
+```java
 switch(条件表达式){
 
 	case 结果1：执行语句1; break;
@@ -870,50 +807,34 @@ switch(条件表达式){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    //请给电影评分 
-    //10 ~ 9   经典   
-    // 8 ~ 7   非常好
-    // 6 ~ 5   一般
-    // 5分以下 烂片
-
-    int score;
-
-    scanf("%d", &score);  //输入分数
-
-    switch(score){
-    case 10:
-    case 9:
-        printf("经典\n");
-        break;
-    case 8:
-        printf("非常好\n");
-        break;
-    case 7:
-    case 6:
-        printf("一般\n");
-        break;
-    default:
-        printf("烂片\n");
-        break;
+```java
+public class Main {
+    public static void main(String[] args) {
+        int score = 100;
+        switch (score){
+            case 100:
+            case 90:
+                System.out.println("典");
+                break;
+            case 80:
+            case 70:
+                System.out.println("一般");
+                break;
+            default:
+                System.out.println("烂片");
+                break;
+        }
     }
-
-    return 0;
-
 }
 ```
 
 ****
 
-### 4.2 循环结构
+## 4.2 循环结构
 
 ****
 
-#### 4.2.1 while循环语句
+## 4.2.1 while循环语句
 
 ****
 
@@ -923,7 +844,7 @@ int main() {
 
 **语法**：
 
-```c
+```java
 while(条件表达式){
 	//语句
 }
@@ -940,30 +861,21 @@ while(条件表达式){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    int sum = 1;
-
-    while(sum <= n){  //当sum小于等于n时执行
-        printf("%d\n", sum);  //输出sum的值和回车
-        sum ++;  //执行完一次循环，sum的值加1
+```java
+public class Main {
+    public static void main(String[] args) {
+        int i = 0;
+        while(i < 10){
+            System.out.println(i);
+            i ++;  // 每次循环 i 自增 1
+        }
     }
-
-    return 0;
-
 }
 ```
 
 ****
 
-#### 4.2.2 do...while循环语句
+## 4.2.2 do...while循环语句
 
 ****
 
@@ -973,7 +885,7 @@ int main() {
 
 **语法**：
 
-```c
+```java
 do{
     //语句
 }while(条件表达式);
@@ -990,32 +902,22 @@ do{
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    int sum = 10;
-
-    do{  
-        printf("%d\n", sum);  //输出sum的值和回车
-        sum --;  //执行完一次循环，sum的值减1
-    }while(sum >= n);  //当sum大于等于n时执行
-
-    //若输入的n值大于10，则仍会先执行一次语句，再判断循环条件
-
-    return 0;
-
+```java
+public class Main {
+    public static void main(String[] args) {
+        int i = -1;
+        do{  // 先执行一次循环体内的内容
+            System.out.println(i);
+            i ++;
+        }while (i > 0);  // 再判断循环的条件
+        System.out.println(i);
+    }
 }
 ```
 
 ****
 
-#### 4.2.3 for循环语句
+## 4.2.3 for循环语句
 
 ****
 
@@ -1025,7 +927,7 @@ int main() {
 
 **语法**：
 
-```c
+```java
 for(初始化条件; 判断条件; 更新){
 	//语句
 }
@@ -1044,27 +946,19 @@ for(初始化条件; 判断条件; 更新){
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    for(int i = 1; i <= n; i ++){  //当i小于等于n时，执行循环体内的语句，执行之后，i的值加1
-        printf("%d\n", i);  //输出i的值和一个回车
+```java
+public class Main {
+    public static void main(String[] args) {
+        for(int i = 0; i < 10; i ++){
+            System.out.println(i);
+        }
     }
-
-    return 0;
-
 }
 ```
 
 ****
 
-#### 4.2.4 嵌套循环
+## 4.2.4 嵌套循环
 
 ****
 
@@ -1074,34 +968,26 @@ int main() {
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    for(int i = 1; i <= n; i ++){  //当i小于等于n时，执行循环体内的语句，执行之后，i的值加1
-        for(int j = 1; j <= i; j ++){//当j小于等于i时，执行循环体内的语句，执行之后，j的值加1
-            printf("%d ", j);  //输出j的值
+```java
+public class Main {
+    public static void main(String[] args) {
+        for(int i = 0; i < 10; i ++){
+            for(int j = 0; j < i; j ++){  // 当 j < i 时
+                System.out.print(j + " ");  // 输出 j
+            }
+            System.out.println();
         }
-        printf("\n");  //执行完内层的循环之后，输出一次回车
     }
-
-    return 0;
-
 }
 ```
 
 ****
 
-### 4.3 跳转语句
+## 4.3 跳转语句
 
 ****
 
-#### 4.3.1 break语句
+## 4.3.1 break语句
 
 ****
 
@@ -1113,66 +999,37 @@ int main() {
 
 **示例1**：
 
-```C
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    for(int i = 1; i <= n; i ++){  //当i小于等于n时，执行循环体内的语句，执行后i的值加1
-
-        printf("%d ", i);  //输出i的值和一个空格
-
-        if(i == 10){  //若i的值为10，则终止循环
-            break;
+```java
+public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        for(int i = 0; i <= n; i ++){
+            if(i < 5) System.out.print(i + " ");  // i < 5 时跳出循环
+            else break;
         }
-
     }
-
-    //当n小于等于10，会输出1 2 3 ... n
-    //当n大于10时，会输出1 2 3 ... 10
-
-    return 0;
-
 }
 ```
 
 **示例2**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    for(int i = 1; i <= n; i ++){  //当i小于等于n时，执行循环体内的语句，执行后i的值加1
-        for(int j = 1; j <= i; j ++){  //当j小于等于i时，执行循环体内的语句，执行之后，j的值加1
-            printf("%d ", j);  //输出j的值
-
-            if(j == 5){  //j的值为5时，退出该层循环
-                break;
+```java
+public class Main {
+    public static void main(String[] args) {
+        for(int i = 0; i < 10; i ++){
+            for(int j = 0; j < 10; j ++){
+                if(j > i) break;  // 当 j > i 时跳出该层循环
+                else System.out.print(j + " ");
             }
-
+            System.out.println();
         }
-
-        printf("\n");  //执行完内层的循环之后，输出一次回车
-
     }
-
-    return 0;
-
 }
 ```
 
 ****
 
-#### 4.3.2 continue语句
+## 4.3.2 continue语句
 
 ****
 
@@ -1186,32 +1043,20 @@ int main() {
 
 **示例**：
 
-```c
-#include <stdio.h> 
-
-int main() {
-
-    int n;
-
-    scanf("%d", &n);
-
-    for(int i = 1; i <= n; i ++){  //当i小于等于n时，执行循环体内的语句，执行后i的值加1
-        if(i % 2 == 0){  //当i为偶数时，跳过本次循环，不再执行下面的语句
-            continue;
+```java
+public class Main {
+    public static void main(String[] args) {
+        for(int i = 0; i < 10; i ++){
+            if(i % 2 == 0) continue;  // 当 i 为偶数时跳过
+            else System.out.println(i);
         }
-        printf("%d ", i);  //输出i的值和一个空格
     }
-
-    //执行后会输出所有不大于n的所有奇数
-
-    return 0;
-
 }
 ```
 
 ****
 
-## 
+# 
 
 
 
