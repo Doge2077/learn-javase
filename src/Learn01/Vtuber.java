@@ -1,9 +1,11 @@
+package Learn01;
+
 public class Vtuber {
     String name = init();
     Integer age;
     String sex;
 
-    static String vtbinfo = static_init();
+    public static String vtbinfo = static_init();
 
     public Vtuber(String name, Integer age, String sex) {
         this.name = name;

@@ -1,3 +1,5 @@
+package Learn01;
+
 public enum Status {
     RUNNING("跑步步"), STUDY("学习习"), SLEEP("睡觉觉");
 

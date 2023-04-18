@@ -1,3 +1,5 @@
+package Learn01;
+
 public class statusVtuber extends Vtubers{
 
     private Status status;

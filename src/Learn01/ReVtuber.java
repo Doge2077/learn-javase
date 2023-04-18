@@ -1,6 +1,8 @@
-public class ReVtuber extends Vtubers{  // 继承自 Vtuber 父类
+package Learn01;
 
-    boolean reborn = true;
+public class ReVtuber extends Vtubers{  // 继承自 Learn01.Vtuber 父类
+
+    public boolean reborn = true;
 
     public ReVtuber(){
         this.reborn = true;
@@ -12,7 +14,7 @@ public class ReVtuber extends Vtubers{  // 继承自 Vtuber 父类
     }
 
     @Override
-    void show() {  // 重写父类的 show() 方法  不能降低父类方法的可见性
+    public void show() {  // 重写父类的 show() 方法  不能降低父类方法的可见性
         super.show();
         System.out.println(this.reborn);
     }

@@ -1,3 +1,5 @@
+package Learn01;
+
 public class yourVtuber extends Vtubers implements chat{
     public yourVtuber(String name, int age, String sex) {
         super(name, age, sex);

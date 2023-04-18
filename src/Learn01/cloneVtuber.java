@@ -1,3 +1,5 @@
+package Learn01;
+
 public class cloneVtuber extends Vtubers implements Cloneable{
     public cloneVtuber(String name, int age, String sex) {
         super(name, age, sex);
@@ -12,7 +14,7 @@ public class cloneVtuber extends Vtubers implements Cloneable{
     }
 
     @Override
-    void show() {
+    public void show() {
         System.out.println("I can clone.");
     }
 }

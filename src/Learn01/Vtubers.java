@@ -1,3 +1,5 @@
+package Learn01;
+
 public class Vtubers {
     private String name;
     private int age;
@@ -25,7 +27,7 @@ public class Vtubers {
         return sex;
     }
 
-    void show(){
+    public void show(){
         System.out.println(this.name);
         System.out.println(this.age);
         System.out.println(this.sex);

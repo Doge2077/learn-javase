@@ -1,3 +1,5 @@
+package Learn01;
+
 public class OnlyVtuber {
     // 单例类的实现
     private static OnlyVtuber ovtb;

@@ -1,5 +1,5 @@
 package pac;
 
 public class reVtuber {
-    String name = "LYS";
+    public String name = "LYS";
 }
