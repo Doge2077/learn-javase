@@ -2,6 +2,9 @@ import pac.neVtuber;
 import pac.test01;
 import static pac.test02.test;
 import pac.reVtuber;
+
+import java.math.BigInteger;
+
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {  // clone() 向上抛异常
 //        Learn01.Vtuber v1 = new Learn01.Vtuber();
@@ -71,5 +74,14 @@ public class Main {
 //        System.out.println(svtb.getStatus().getName());
 //        Learn01.Status.RUNNING.setName("跑跑步");
 //        System.out.println(svtb.getStatus().getName());
+
+//        int a = 10;
+//        System.out.println(Integer.toString(a));
+
+        BigInteger x = BigInteger.valueOf(Long.MAX_VALUE);
+        System.out.println(x);
+        BigInteger i = new BigInteger("3fffffffffffffffffffffffffffffffffffffffffffffffffffff",16);
+        System.out.println(i);
+
     }
 }
