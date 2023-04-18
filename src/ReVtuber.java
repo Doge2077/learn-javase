@@ -12,7 +12,7 @@ public class ReVtuber extends Vtubers{  // 继承自 Vtuber 父类
     }
 
     @Override
-    void show() {  // 重写父类的 show() 方法
+    void show() {  // 重写父类的 show() 方法  不能降低父类方法的可见性
         super.show();
         System.out.println(this.reborn);
     }

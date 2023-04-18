@@ -31,4 +31,10 @@ public class Vtubers {
         System.out.println(this.sex);
     }
 
+    @Override
+    public String toString() {
+        return this.name + this.age + this.sex;
+    }
+
+
 }

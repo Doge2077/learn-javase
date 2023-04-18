@@ -1,8 +1,9 @@
+import pac.neVtuber;
 import pac.test01;
 import static pac.test02.test;
 import pac.reVtuber;
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws CloneNotSupportedException {  // clone() 向上抛异常
 //        Vtuber v1 = new Vtuber();
 //        Vtuber v2 = new Vtuber("hiiro", 114, "girl");
 //        System.out.println(Vtuber.vtbinfo);
@@ -39,8 +40,36 @@ public class Main {
 //        Vtubers vtb = (Vtubers) rvtb;
 //        System.out.println(vtb);
 
+//        Vtubers vtbs = new ReVtuber();
+//        if(vtbs instanceof ReVtuber) System.out.println("vtbs 是 Revtuber 类的实例化");
+//        if(vtbs instanceof Vtubers) System.out.println("vtbs 是 Vtubers 类的实例化");
 
+//        Vtubers vtbs = new Vtubers("lys", 14, "boy");
+////        System.out.println(vtbs.toString());  // 未重写的继承自 Object 类的toString() 方法
+//        System.out.println(vtbs.toString());
 
+//        neVtuber nvtb = new neVtuber("Hiiro", 114, "cat", false);  // 抽象类只能通过子类实例化来使用
+//        nvtb.show();
 
+//        myVtuber mvtb = new myVtuber();
+//        yourVtuber uvtb = new yourVtuber();
+//        mvtb.chat_eat();  // 类实现具体的接口
+//        uvtb.chat_eat();
+
+//        moveVtuber mvtb = new moveVtuber();
+//        mvtb.moddle_walk();  // default 修饰的接口是接口类中的默认实现，实现类中不强制要求进行实现，可直接调用
+
+//        cloneVtuber cvtb = new cloneVtuber("Hiiro", 11, "cat");
+//        cloneVtuber clone = (cloneVtuber) cvtb.clone();
+//        System.out.println(cvtb);
+//        System.out.println(clone);
+//        System.out.println(clone == cvtb);
+
+//        statusVtuber svtb = new statusVtuber("Hiiro", 13, "cat");
+//        svtb.setStatus(Status.RUNNING);
+////        System.out.println(svtb.getStatus());
+//        System.out.println(svtb.getStatus().getName());
+//        Status.RUNNING.setName("跑跑步");
+//        System.out.println(svtb.getStatus().getName());
     }
 }
