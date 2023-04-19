@@ -1,10 +1,3 @@
-import pac.neVtuber;
-import pac.test01;
-import static pac.test02.test;
-import pac.reVtuber;
-
-import java.math.BigInteger;
-
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {  // clone() 向上抛异常
 //        Learn01.Vtuber v1 = new Learn01.Vtuber();
@@ -78,10 +71,91 @@ public class Main {
 //        int a = 10;
 //        System.out.println(Integer.toString(a));
 
-        BigInteger x = BigInteger.valueOf(Long.MAX_VALUE);
-        System.out.println(x);
-        BigInteger i = new BigInteger("3fffffffffffffffffffffffffffffffffffffffffffffffffffff",16);
-        System.out.println(i);
+//        BigInteger x = BigInteger.valueOf(Long.MAX_VALUE); // 可以轻松表示 long 的最大范围
+//        System.out.println(x);
+//        BigInteger y = BigInteger.valueOf(Long.MAX_VALUE * 2);  // 溢出，因为显示地字面量仍为 Long
+//        System.out.println(y);
+//        BigInteger t = new BigInteger("1145141919810114514191981011451419198101145141919810");  // 想表示更大的数应当转换为字符串
+//        System.out.println(t);
+//        BigInteger p = new BigInteger("110", 2);  // 支持 2 进制
+//        System.out.println(p);  // 输出为 10 进制
+//        BigInteger i = new BigInteger("3fffffffffffffffffffffffffffffffffffffffffffffffffffff",16);  // 支持 16 进制
+//        System.out.println(i);  // 输出为 10 进制
+//        BigInteger j = new BigInteger("1010101012020201010121020212120202102012020120", 3);  // 支持自定义的进制 进制范围 2 ~ 36
+//        System.out.println(j);
+//        BigInteger k = new BigInteger("1145141919810");  // 十进制默认不加 radix 参数
+//        k = k.pow(114514);
+//        System.out.println(k);  // 可以看到肥肠大了
+
+//        BigDecimal x = BigDecimal.valueOf(Double.MAX_VALUE); // 可以轻松表示 double 的最大范围
+//        System.out.println(x);
+//        BigDecimal y = x.multiply(x);
+//        System.out.println(y);  // 可以看到后面的精度省略了
+//        BigDecimal i = BigDecimal.valueOf(10);
+//        BigDecimal z = i.divide(BigDecimal.valueOf(3), 100, RoundingMode.CEILING);
+//        //计算 10 / 3 的结果，精确到小数点后 100 位
+//        //RoundingMode 是舍入模式，就是精确到最后一位时，该怎么处理，这里 CEILING 表示向上取整
+//        System.out.println(z);
+
+//        int[] a = new int[10];  // 创建数组需要指定长度
+//        int[] b = new int[(int)1e8 + 10];
+//        boolean[] c = new boolean[10];
+////        for(int i = 0; i < a.length; i ++) System.out.println(i + " " + a[i]);  // 默认值都为 0
+//        for(int i = 0; i < c.length; i ++) System.out.println(i + " " + c[i]);  // 默认值都为 false
+//        int[] a = new int[10];
+//        int[] b = new int[10];
+//        for(int i = 0; i < a.length; i ++){
+//            a[i] = 10 - i; b[i] = a[i];
+//        }
+//        int[] c = a;
+//        int[] d = a.clone();
+////        System.out.println(a);  // 继承自 Object 类
+////        System.out.println(a.toString());  // 自带 toString() 方法
+////        System.out.println(a.equals(b));
+////        System.out.println(a.equals(a));
+////        System.out.println(a.equals(c));
+//        System.out.println(a.equals(d));
+////        for(int i : d) System.out.println(i);
+
+//        int[] a = new int[10];
+//        a[0] = 1;
+//        int[] b = a.clone();
+////        System.out.println(a.equals(b));  // 返回 false
+//        Integer t = a[0]; Integer p = b[0];
+//        System.out.println(t.equals(p));  // 返回 true
+        // .clone() 方法默认为浅拷贝，但是只针对其中的数据，实际上数组 a, b 是两个不同的对象，a, b 数组的数据是同一个对象。
+
+//        calc c = new calc();
+////        c.test01("lys", "is", "a", "dog");  // 接收可边长参数
+//        c.test02(1, 2, 3, 4, 5);  // 可边长参数最后加入
+
+//        for(String i : args) System.out.println(i);  // cd 到 out/production/ 下加参数运行 得到命令行参数列表
+
+//        String s1 = "lys is a dog.";
+//        String s2 = "lys is a dog.";
+//        String s3 = s1;
+//        System.out.println(s1.equals(s2));  // 此处为 true 是因为 String 重载了 equals() 方法，比较了两个字符串的内容
+//        System.out.println(s1 == s2);  // 此处为 true 是因为编译器优化了直接创建的相同的字符串对象
+//        System.out.println(s1 == s3);
+
+//        String s1 = new String("lys");
+//        String s2 = new String("lys");
+//        String s3 = s1;
+//        System.out.println(s1.equals(s2));  // s1 与 s2 的内容相同 返回 true
+//        System.out.println(s1 == s2);  // 使用 new 创建出来的是两个对象 返回 false
+//        System.out.println(s1 == s3);  // 赋值创建的为引用对象
+
+//        String s = "lys is a dog.";
+//        System.out.println(s.length());
+//        System.out.println(s.toString());
+//        System.out.println(s.toUpperCase());  // 返回一个全是大写的新的字符串
+//        System.out.println(s);  // 原来的未改变
+//        s = s.toUpperCase();
+//        System.out.println(s);  // 改变一下
+//        s = s.toLowerCase();
+//        System.out.println(s);  // 变回来
+
+        
 
     }
 }
