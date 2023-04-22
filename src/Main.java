@@ -1,3 +1,11 @@
+import Learn02.fuClass;
+import Learn02.meClass;
+import Learn02.reClass;
+import Learn02.stClass;
+import Learn02.*;
+
+import java.security.spec.RSAOtherPrimeInfo;
+
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {  // clone() 向上抛异常
 //        Learn01.Vtuber v1 = new Learn01.Vtuber();
@@ -136,7 +144,8 @@ public class Main {
 //        String s3 = s1;
 //        System.out.println(s1.equals(s2));  // 此处为 true 是因为 String 重载了 equals() 方法，比较了两个字符串的内容
 //        System.out.println(s1 == s2);  // 此处为 true 是因为编译器优化了直接创建的相同的字符串对象
-//        System.out.println(s1 == s3);
+//        System.out.println(s1 == s3);  // 同一个对象
+//
 
 //        String s1 = new String("lys");
 //        String s2 = new String("lys");
@@ -155,7 +164,95 @@ public class Main {
 //        s = s.toLowerCase();
 //        System.out.println(s);  // 变回来
 
-        
+//        char[] a = new char[26];
+//        for(int i = 0, k = 'A'; k <= 'Z'; i ++, k ++) a[i] = (char)k;
+////        for(char i : a) System.out.print(i);
+////        String sa = new String(a);  // 将 char 数组转化为 String
+////        System.out.println(sa);
+//        String sa = new String("lys is a dog");
+//        char[] p = sa.toCharArray();  // 将 String 转换为 char 数组
+//        System.out.println(p);
 
+//        String s1 = "lys ";
+//        String s2 = "is ";
+//        String s3 = "a ";
+//        String s4 = "dog .";
+//        String s5 = s1 + s2 + s3 + s4;
+////        System.out.println(s5);  // 实际上会被优化为下列代码
+//        StringBuilder builder = new StringBuilder();  // 创建 builder 用于构造字符串
+//        builder.append(s1).append(s2).append(s3).append(s4);  // 在后面拼接
+////        System.out.println(builder);
+//        System.out.println(builder.toString());  // 调用 toString() 方法
+//        builder.delete(0, 3);  // 删除 [0, 3) 之间的字符
+//        System.out.println(builder.toString());
+
+//        String s = "oooooo";
+//        System.out.println(s.matches("o+"));  // x+ 表示 char x 出现一次或多次
+//        String s = "runooooooob";
+//        System.out.println(s.matches("runo*b"));  // x* 表示 char x 出现任意次
+//        String s = "runoonb";
+//        System.out.println(s.matches("runn?oonb"));  // x? 表示 char x 出现不多与 1 次
+
+
+//        meClass mc = new meClass("lys");  // 实例化外部类 meClass
+//        meClass.innerClass mic = mc.new innerClass();  // 用实例化对象 mc 实例化成员内部类对象 mic
+//        mic.show();  // 调用成员内部类的方法
+//        mic.show_name();
+
+//        reClass rcl = new reClass("Hiiro");
+//        reClass.innerClass ricl = rcl.new innerClass();
+//        ricl.show_name();  // 成员内部类与外部变量名冲突，就近原则
+//        ricl.show_thisname();   //在内部类中使用this关键字，只能表示内部类对象
+//        ricl.show_outerthisname();  // //如果需要指定为外部的对象，那么需要在前面添加外部类型名称
+//
+//        ricl.use_show_name();  // 调用了内部类类自己的方法
+//        ricl.use_super_show_name();  // 调用了外部类的方法
+
+//        stClass scl = new stClass("Hiiro");
+////        stClass.innerClass sicl = scl.new innerClass();  // 不需要实例化外部类再 new
+//        stClass.innerClass sicl = new stClass.innerClass();  // 直接 new 即可
+//        sicl.show();
+////        sicl.show_name();  // 无法访问到外部类的非静态内容
+//        sicl.show_innerName();  // 静态成员内部类本身的变量不受影响
+//
+//        fuClass fu = new fuClass();
+//        fu.show(); //调用fuClass中的show方法
+//        fuClass.fuctionClass fc = new fuClass().new fuctionClass();
+//        fc.show_fuClass();
+
+//        naClass ncl = new naClass("Hiiro") {   // 匿名内部类在 new 的时候，后面加上花括号，把未实现的方法实现了
+//            @Override
+//            public void show() {
+//                System.out.println(getS());
+//            }
+//        };
+//
+//        ncl.show();
+
+
+//        naInterface nif = new naInterface() {  // 抽象接口
+//            @Override
+//            public void show() {
+//                System.out.println("This is naInterface show()");
+//            }
+//        };
+//
+//        nif.show();
+//
+//        naInterface lnif = () -> System.out.println("This is naInterface lambda show()");
+//
+//        lnif.show();
+
+//        nalInterface nlif = (String a) -> {  // 第一种写法
+//            return "My name is " + a;
+//        };
+//        nalInterface nlif = (a) -> "My name is " + a;  // 参数类型可省略，只存在 return 语句可继续简化
+//        nalInterface nlif = a -> "My name is " + a;  // 只有一个参数可省略 ()
+//        System.out.println(nlif.show("Hiiro"));
+
+//        caInterface cif = (a, b) -> a + b;  // lambda 表达式
+//        caInterface cif = (a, b) -> Integer.sum(a, b);  // 利用 Integer 封装的 sum() 方法
+//        caInterface cif = Integer::sum;  // 直接对 Integer 的 sum() 方法解引用
+//        System.out.println(cif.sum(1, 2));
     }
 }
