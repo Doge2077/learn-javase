@@ -4,9 +4,13 @@ import Learn02.reClass;
 import Learn02.stClass;
 import Learn02.*;
 
+import java.util.*;
+
 import java.security.spec.RSAOtherPrimeInfo;
 
 public class Main {
+
+    static int ansForge = 0;
     public static void main(String[] args) throws CloneNotSupportedException {  // clone() 向上抛异常
 //        Learn01.Vtuber v1 = new Learn01.Vtuber();
 //        Learn01.Vtuber v2 = new Learn01.Vtuber("hiiro", 114, "girl");
@@ -254,5 +258,89 @@ public class Main {
 //        caInterface cif = (a, b) -> Integer.sum(a, b);  // 利用 Integer 封装的 sum() 方法
 //        caInterface cif = Integer::sum;  // 直接对 Integer 的 sum() 方法解引用
 //        System.out.println(cif.sum(1, 2));
+
+//        System.out.println(Math.max(1, 114));
+//        System.out.println(Math.min(1, 113));
+//        System.out.println(Math.pow(2, 3));
+//        System.out.println(Math.sqrt(4));
+//        System.out.println(Math.pow(27, 1.0/3.0));  // 开三次方
+//        System.out.println(Math.sin(Math.PI / 6));  // π / 6 的正弦值
+//        System.out.println(Math.asin(0.5));  // 求 arcsin 0.5 的值
+//        System.out.println(Math.log(Math.E));  // ln(e) 的值
+//        System.out.println(Math.log10(100));  // log10(100) 的值
+//        System.out.println(Math.ceil(5.1));  // 向上取整
+//        System.out.println(Math.floor(5.999));  // 向下取整
+//        System.out.println(Math.random());  // 生成一个 0.0 ~ 1.0 之间的伪随机数
+//        Random random = new Random();  // 默认构造，不使用随机数种子
+//        Random random = new Random(10);  // 指定随机数种子
+//        int t = random.nextInt();  // 返回一个随机整数值
+//        int t = random.nextInt(100);  // 返回一个小于 n 的随机整数，范围是 0 到 n-1 之间
+//        boolean t = random.nextBoolean();  // 返回一个随机布尔值
+//        double t = random.nextDouble();  // 返回一个随机的 double 值，在 0.0（包括）到 1.0（不包括）之间。
+//        System.out.println(t);
+
+//        int[] arr = new int[]{1, 2, 3, 4, 5};
+//        System.out.println(Arrays.toString(arr));  // Arrays 工具类输出数组元素
+
+//        int[] a = new int[20];
+//        Random random = new Random(10);
+//        for(int i = 0; i < 20; i ++){
+//            a[i] = random.nextInt(100);
+//        }
+////        System.out.println("a usort: " + Arrays.toString(a));
+////        Arrays.sort(a);  // 默认从小到大排序
+////        System.out.println("a sorted small to big: " + Arrays.toString(a));
+//
+//        Integer[] b = Arrays.stream(a).boxed().toArray(Integer[]::new);  // 将基本类型转换为包装类
+////        Arrays.sort(b);  // 默认也是从小到大排序
+////        Arrays.sort(b, Collections.reverseOrder());  // 翻转为升序
+//        Arrays.sort(b, Comparator.reverseOrder());  // 排序为升序
+//        System.out.println(Arrays.toString(b));
+
+//        int[][] a = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+//        System.out.println(Arrays.deepToString(a));  // 输出二维数组
+
+//        int[] arr = {1, 3, 4, 6, 7, 8, 10, 11, 13, 15};
+//        int target = 3;
+//        System.out.println(besearch(arr, target));
+
+//        int n = 10;
+//        solveFroge(0, n);
+//        System.out.println(ansForge);
+
+        Scanner cin = new Scanner(System.in);
+        String s = cin.next();
+        System.out.println(checkString(s));
+
     }
+
+    private static int besearch(int[] a, int key){
+        int l = 0, r = a.length - 1;
+        while(l <= r){
+            int mid = l + r >> 1;
+            if(a[mid] < key) l = mid + 1;
+            else if(a[mid] > key) r = mid - 1;
+            else return mid;
+        }
+        return -1;
+    }
+
+    private static void solveFroge(int s, int n){
+        if(s == n){
+            ansForge ++; return ;
+        }
+        if(s + 1 <= n) solveFroge(s + 1, n);
+        if(s + 2 <= n) solveFroge(s + 2, n);
+    }
+
+    private static boolean checkString(String s){
+        int i = 0, j = s.length() - 1;
+        char[] c = s.toCharArray();
+        while (i < j){
+            if(c[i] != c[j]) return false;
+            i ++; j ++;
+        }
+        return true;
+    }
+
 }
