@@ -3,6 +3,8 @@ import Learn02.meClass;
 import Learn02.reClass;
 import Learn02.stClass;
 import Learn02.*;
+import Learn03.Vtb;
+import Learn03.Vtbs;
 
 import java.util.*;
 
@@ -308,9 +310,25 @@ public class Main {
 //        solveFroge(0, n);
 //        System.out.println(ansForge);
 
-        Scanner cin = new Scanner(System.in);
-        String s = cin.next();
-        System.out.println(checkString(s));
+//        Scanner cin = new Scanner(System.in);
+//        String s = cin.next();
+//        System.out.println(checkString(s));
+
+////        Vtb<String> hiiro = new Vtb<String>("Hiiro", "114514", "cat");
+//        Vtb hiiro = new Vtb("Hiiro", "114514", "cat");  // 此种方式定义使得类型 T 在编译期擦除
+//        hiiro.show_vtbinfo();
+//        System.out.println(hiiro.getValue().getClass().getTypeName());  // 但是运行仍能判断其类型，后续详解
+
+////        Vtb<int> lys = new Vtb<int>("LYS", "Dog", 13);  // T 不能是基本类型
+//        Vtb<Integer> lys = new Vtb<Integer>("LYS", "Dog", 13);
+//        lys.show_vtbinfo();
+
+//        Vtb<?> what = new Vtb<>();  // 使用通配符 ?，则 value 默认为 Object 类型
+//        what.show_vtbinfo();
+////        System.out.println(what.getValue().getClass().getTypeName());  // 由于 value = null 会引发空指针异常
+
+//        Vtbs<String, Integer, Double> hiiro = new Vtbs<>("Hiiro", 114514, 19.19);  // 指定多个泛型变量
+//        hiiro.show_vtbsinfo();
 
     }
 
