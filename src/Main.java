@@ -5,6 +5,7 @@ import Learn02.stClass;
 import Learn02.*;
 import Learn03.Vtb;
 import Learn03.Vtbs;
+import Learn03.Vtbshow;
 
 import java.util.*;
 
@@ -329,6 +330,9 @@ public class Main {
 
 //        Vtbs<String, Integer, Double> hiiro = new Vtbs<>("Hiiro", 114514, 19.19);  // 指定多个泛型变量
 //        hiiro.show_vtbsinfo();
+
+        Vtbshow vtbs = new Vtbshow("hiiro", "cat");
+        vtbs.show_info();
 
     }
 
