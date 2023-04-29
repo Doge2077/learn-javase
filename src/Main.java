@@ -6,10 +6,12 @@ import Learn02.*;
 import Learn03.Vtb;
 import Learn03.Vtbs;
 import Learn03.Vtbshow;
+import Learn03.Vtuberfu;
 
 import java.util.*;
 
 import java.security.spec.RSAOtherPrimeInfo;
+import java.util.function.Supplier;
 
 public class Main {
 
@@ -331,8 +333,36 @@ public class Main {
 //        Vtbs<String, Integer, Double> hiiro = new Vtbs<>("Hiiro", 114514, 19.19);  // 指定多个泛型变量
 //        hiiro.show_vtbsinfo();
 
-        Vtbshow vtbs = new Vtbshow("hiiro", "cat");
-        vtbs.show_info();
+//        Vtbshow vtbs = new Vtbshow("hiiro", "cat");
+//        vtbs.show_info();
+
+//        Integer[] a = new Integer[]{1, 9, 3, 4, 8, 5, 7, 2, 4, 6};
+////        Arrays.sort(a);  // 默认从小到大排序
+//
+//        //通过创建泛型接口的匿名内部类，来自定义排序规则，因为匿名内部类就是接口的实现类，所以说这里就明确了类型
+////        Arrays.sort(a, new Comparator<Integer>() {
+////            @Override
+////            public int compare(Integer o1, Integer o2) {
+////                return o2 - o1;  //compare方法要求返回一个int来表示两个数的大小关系，大于0表示大于，小于0表示小于
+////            }
+////        });
+//
+//        Arrays.sort(a, (x, y) -> y - x);  // lambda 表达式
+//
+//        System.out.println(Arrays.toString(a));
+
+//        Supplier<Vtuberfu> vtbfu = new Supplier<Vtuberfu>() {
+//            @Override
+//            public Vtuberfu get() {
+//                return new Vtuberfu();
+//            }
+//        };
+
+//        Supplier<Vtuberfu> vtbfu = () -> new Vtuberfu();  // 替换为 lambda
+
+//        Supplier<Vtuberfu> vtbfu = Vtuberfu::new;  // lambda 替换为方法引用
+
+        
 
     }
 
