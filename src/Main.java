@@ -362,7 +362,13 @@ public class Main {
 
 //        Supplier<Vtuberfu> vtbfu = Vtuberfu::new;  // lambda 替换为方法引用
 
-        
+        List<String> a = new ArrayList<>();
+        a.add("Hiiro");
+        a.add("is");
+        a.add("a debu.");
+        System.out.println(a.toString());
+        System.out.println(a);
+
 
     }
 
