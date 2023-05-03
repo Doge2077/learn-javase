@@ -1,3 +1,4 @@
+import Learn01.Action;
 import Learn02.fuClass;
 import Learn02.meClass;
 import Learn02.reClass;
@@ -362,14 +363,38 @@ public class Main {
 
 //        Supplier<Vtuberfu> vtbfu = Vtuberfu::new;  // lambda 替换为方法引用
 
-        List<String> a = new ArrayList<>();
-        a.add("Hiiro");
-        a.add("is");
-        a.add("a debu.");
-        System.out.println(a.toString());
-        System.out.println(a);
+//        List<String> a = new ArrayList<>();
+//        a.add("Hiiro");
+//        a.add("is");
+//        a.add("a debu.");
+//        System.out.println(a.toString());
+//        System.out.println(a);
 
+//        ArrayList<Integer> a = new ArrayList<>();
+//        for(int i = 0; i < 10; i ++){
+//            a.add(i % 2 == 0 ? i : i - i * 2 / 3);
+//        }
+//        Comparator<Integer> cmp = (o1, o2) -> o1 - o2;
+//        a.sort(cmp);
+//        System.out.println(a);
 
+//        Action act = new Action() {
+//            @Override
+//            public void walk() {
+//                System.out.println("Walk");
+//            }
+//        };
+//        hhh(act);
+
+//        Action act = () -> System.out.println("Walk");
+//        hhh(act);
+
+        hhh(() -> System.out.println("Walk"));
+
+    }
+
+    public static void hhh(Action act){
+        act.walk();
     }
 
     private static int besearch(int[] a, int key){
