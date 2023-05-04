@@ -389,7 +389,10 @@ public class Main {
 //        Action act = () -> System.out.println("Walk");
 //        hhh(act);
 
-        hhh(() -> System.out.println("Walk"));
+//        hhh(() -> System.out.println("Walk"));
+
+        LinkedList<String> a = new LinkedList<>();
+        a.add("lys");
 
     }
 
