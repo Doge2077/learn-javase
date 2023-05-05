@@ -1,23 +1,14 @@
 import Learn01.Action;
-import Learn02.fuClass;
-import Learn02.meClass;
-import Learn02.reClass;
-import Learn02.stClass;
-import Learn02.*;
-import Learn03.Vtb;
-import Learn03.Vtbs;
-import Learn03.Vtbshow;
-import Learn03.Vtuberfu;
 
 import java.util.*;
-
-import java.security.spec.RSAOtherPrimeInfo;
-import java.util.function.Supplier;
 
 public class Main {
 
     static int ansForge = 0;
-    public static void main(String[] args) throws CloneNotSupportedException {  // clone() 向上抛异常
+
+    static int threadValue = 0;
+
+    public static void main(String[] args) throws CloneNotSupportedException, InterruptedException {  // clone() 向上抛异常
 //        Learn01.Vtuber v1 = new Learn01.Vtuber();
 //        Learn01.Vtuber v2 = new Learn01.Vtuber("hiiro", 114, "girl");
 //        System.out.println(Learn01.Vtuber.vtbinfo);
@@ -384,47 +375,130 @@ public class Main {
 //                System.out.println("Walk");
 //            }
 //        };
+//        act.walk();
 //        hhh(act);
 
 //        Action act = () -> System.out.println("Walk");
+//        act.walk();
 //        hhh(act);
 
 //        hhh(() -> System.out.println("Walk"));
 
-        LinkedList<String> a = new LinkedList<>();
-        a.add("lys");
+//        LinkedList<String> a = new LinkedList<>();
+//        a.add("lys");
+
+//        ArrayList<Integer> a = new ArrayList<>();
+//        a.add(100);
+//        a.add((Integer) 100);
+////        a.add(114514.1919);  // 类型必须是 Integer
+//        a.add(1145);
+////        a.remove(1145);  // 直接 remove((int)idx) 是删除下标为 idx 的元素
+//        a.remove((Integer) 1145);  //  声明为 (Integer) 后删除指定元素
+//        Iterator<Integer> it = a.iterator();
+////        while(it.hasNext()){
+////            System.out.println((Integer)it.next());
+////        }
+//        for(Integer i : a){  // 增强的 for
+//            System.out.println(i);
+//        }
+
+//        Thread ac = new Thread(() -> {
+//            for (int i = 0; i < 10; i++) {
+//                System.out.println("Thread ac running: " + i);
+//            }
+//        });
+//
+//        Thread wa = new Thread(() -> {
+//            for (int i = 0; i < 10; i++) {
+//                System.out.println("Thread wa running: " + i);
+//            }
+//        });
+//
+//        ac.start();
+//        wa.start();
+
+//        System.out.println("l");
+//        Thread.sleep(1000);  // 利用 sleep 来使线程休眠  需要添加 InterruptedException 异常到方法签名
+//        System.out.println("y");
+//        Thread.sleep(1000);
+//        System.out.println("s");
+
+
+//        Thread t1 = new Thread(() -> {
+//            for (int i = 0; i < 10000; i++) threadValue ++;
+//            System.out.println("线程1完成");
+//        });
+//        Thread t2 = new Thread(() -> {
+//            for (int i = 0; i < 10000; i++) threadValue ++;
+//            System.out.println("线程2完成");
+//        });
+//        t1.start();
+//        t2.start();
+//        Thread.sleep(1000);  //主线程停止1秒，保证两个线程执行完成
+//        System.out.println(threadValue);
+
+//        Thread thread1 = new Thread(() -> {
+//            try {
+//                System.out.println("L");
+//                Thread.sleep(1000);  // 只作用于当前线程
+//                System.out.println("Y");
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        });
+//
+//        thread1.start();
+
+//        Thread t = new Thread(() -> {
+//            try {
+//                Thread.sleep(10000);  //休眠10秒
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        });
+//        t.start();
+//        try {
+//            Thread.sleep(3000);   //休眠3秒，一定比线程t先醒来
+//            t.interrupt();   //调用t的interrupt方法
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+        
 
     }
 
-    public static void hhh(Action act){
+    public static void hhh(Action act) {
         act.walk();
     }
 
-    private static int besearch(int[] a, int key){
+    private static int besearch(int[] a, int key) {
         int l = 0, r = a.length - 1;
-        while(l <= r){
+        while (l <= r) {
             int mid = l + r >> 1;
-            if(a[mid] < key) l = mid + 1;
-            else if(a[mid] > key) r = mid - 1;
+            if (a[mid] < key) l = mid + 1;
+            else if (a[mid] > key) r = mid - 1;
             else return mid;
         }
         return -1;
     }
 
-    private static void solveFroge(int s, int n){
-        if(s == n){
-            ansForge ++; return ;
+    private static void solveFroge(int s, int n) {
+        if (s == n) {
+            ansForge++;
+            return;
         }
-        if(s + 1 <= n) solveFroge(s + 1, n);
-        if(s + 2 <= n) solveFroge(s + 2, n);
+        if (s + 1 <= n) solveFroge(s + 1, n);
+        if (s + 2 <= n) solveFroge(s + 2, n);
     }
 
-    private static boolean checkString(String s){
+    private static boolean checkString(String s) {
         int i = 0, j = s.length() - 1;
         char[] c = s.toCharArray();
-        while (i < j){
-            if(c[i] != c[j]) return false;
-            i ++; j ++;
+        while (i < j) {
+            if (c[i] != c[j]) return false;
+            i++;
+            j++;
         }
         return true;
     }
