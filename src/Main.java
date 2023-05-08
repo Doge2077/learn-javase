@@ -1,5 +1,11 @@
 import Learn01.Action;
+import Learn04.Hiiro;
+import Learn04.prHiiro;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public class Main {
@@ -8,7 +14,9 @@ public class Main {
 
     static int threadValue = 0;
 
-    public static void main(String[] args) throws CloneNotSupportedException, InterruptedException {  // clone() 向上抛异常
+    public static void main(String[] args) throws CloneNotSupportedException, InterruptedException,
+            InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException,
+            NoSuchFieldException {  // clone() 向上抛异常
 //        Learn01.Vtuber v1 = new Learn01.Vtuber();
 //        Learn01.Vtuber v2 = new Learn01.Vtuber("hiiro", 114, "girl");
 //        System.out.println(Learn01.Vtuber.vtbinfo);
@@ -554,11 +562,51 @@ public class Main {
 //        Collections.sort(v, ((o1, o2) -> o2 - o1));
 //        System.out.println(v.toString());
 
-        new Thread(Main::threadProductor, "P1").start();
-        new Thread(Main::threadProductor, "P2").start();
-        new Thread(Main::threadConsumer, "C1").start();
-        new Thread(Main::threadConsumer, "C2").start();
-        new Thread(Main::threadConsumer, "C3").start();
+//        new Thread(Main::threadProductor, "P1").start();
+//        new Thread(Main::threadProductor, "P2").start();
+//        new Thread(Main::threadConsumer, "C1").start();
+//        new Thread(Main::threadConsumer, "C2").start();
+//        new Thread(Main::threadConsumer, "C3").start();
+
+//        Class<Hiiro> classHiiro = Hiiro.class;
+//        Hiiro hiiro = classHiiro.newInstance();
+//        Method method = classHiiro.getDeclaredMethod("clone");
+//        method.setAccessible(true);
+//        Hiiro lys = (Hiiro) method.invoke(hiiro);
+//        System.out.println(hiiro == lys);
+
+        Class<prHiiro> ph = prHiiro.class;  // 反射获取类
+
+        // 反射调用私有构造创建对象
+        Constructor<prHiiro> prhiiro_new = ph.getDeclaredConstructor(String.class, String.class);  // 获取私有的构造方法
+        prhiiro_new.setAccessible(true);  // 修改私有构造方法权限
+        prHiiro Hiiro = prhiiro_new.newInstance("Hiiro", "Cat");  // 创建对象
+
+        // 反射调用私有方法
+        Method prhiiro_show = ph.getDeclaredMethod("show");  // 获取私有方法
+        prhiiro_show.setAccessible(true);  // 修改私有方法权限
+        prhiiro_show.invoke(Hiiro);  // 调用实例化对象的私有方法
+
+        // 反射修改私有属性 final 字段值
+        Field prhiiro_age = ph.getDeclaredField("age");
+        prhiiro_age.setAccessible(true);
+        prhiiro_age.set(Hiiro, 1919);
+        prhiiro_show.invoke(Hiiro);
+
+        // 反射修改私有属性 static 字段值
+        Field prhiiro_work = ph.getDeclaredField("work");
+        prhiiro_work.setAccessible(true);
+        prhiiro_work.set(Hiiro, "My Wife");
+        prhiiro_show.invoke(Hiiro);
+
+//        // 反射无法修改私有属性 static 字段值
+//        Field prhiiro_status = ph.getDeclaredField("status");
+//        prhiiro_status.setAccessible(true);
+//        prhiiro_status.set(Hiiro, "nya~~~");
+//        prhiiro_show.invoke(Hiiro);
+//        //  status 字段被定义为 final static 字段，它是一个常量，值在编译时已确定并被写入到常量池中，因此不能通过反射机制进行修改。
+
+
 
     }
 
