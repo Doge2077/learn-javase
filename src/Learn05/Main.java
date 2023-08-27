@@ -11,9 +11,7 @@ import static jdk.nashorn.internal.objects.NativeArray.forEach;
 
 public class Main {
     public static void main(String[] args) {
-        String Claim = "Test number is ";
-        Claim = "Yeah~ The number is ";
-        Test test = param -> Claim + param;
-        System.out.println(test.showTestNumber(2333));
+        Runnable runnable = () -> System.out.println("哼哼哼啊啊啊~");
+        runnable.run();
     }
 }
