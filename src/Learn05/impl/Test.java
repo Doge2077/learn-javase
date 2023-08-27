@@ -1,5 +1,5 @@
 package Learn05.impl;
 
 public interface Test {
-    String showTestNumber(Integer param);
+    String newTest(String param);
 }
