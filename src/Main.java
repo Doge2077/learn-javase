@@ -24,7 +24,7 @@ public class Main {
 //        test01 t = new test01();
 //        System.out.println(t.name);
 //
-//        test();  // 静态导入的 test02 方法直接使用即可
+//        Test();  // 静态导入的 test02 方法直接使用即可
 //
 //        reVtuber rev = new reVtuber();
 //        System.out.println(rev.name);  // 无法访问不同包下的类的默认权限的成员变量
