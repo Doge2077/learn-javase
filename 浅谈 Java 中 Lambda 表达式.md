@@ -373,7 +373,7 @@ public int compareTo(Integer anotherInteger) {
 }
 ```
 
-我们可以将之前的匿名内部类实现替换为 `Lambda` 如下：
+如果是以匿名内部类的方式实现，那么代码如下：
 
 ```java
 public class Main {
@@ -385,6 +385,18 @@ public class Main {
                 return o1.compareTo(o2);
             }
         });
+        System.out.println(Arrays.toString(array)); //按从小到大的顺序排列
+    }
+}
+```
+
+继续将上述匿名内部类替换为 `Lambda` 表达式如下：
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Integer[] array = new Integer[]{4, 5, 9, 3, 2, 8, 1, 0, 6};
+        Arrays.sort(array, (o1, o2) -> o1.compareTo(o2));
         System.out.println(Arrays.toString(array)); //按从小到大的顺序排列
     }
 }

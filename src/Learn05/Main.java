@@ -12,7 +12,8 @@ import static jdk.nashorn.internal.objects.NativeArray.forEach;
 
 public class Main {
     public static void main(String[] args) {
-        Runnable runnable = () -> System.out.println("Fxxk");
-        runnable.run();
+        Integer[] array = new Integer[]{4, 5, 9, 3, 2, 8, 1, 0, 6};
+        Arrays.sort(array, (o1, o2) -> o1.compareTo(o2));
+        System.out.println(Arrays.toString(array)); //按从小到大的顺序排列
     }
 }
