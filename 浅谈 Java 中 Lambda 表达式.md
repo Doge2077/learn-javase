@@ -445,13 +445,13 @@ public class Main {
 * 匿名内部类本质是一个类，只是不需要我们显示地指定类名，编译器会自动为该类取名。
 * 而 `Lambda` 表达式本质是一个函数，当然，编译器也会为它取名，在 `JVM` 层面，这是通过 `invokedynamic` 指令实现的，编译器会将 `Lambda` 表达式转化为一个私有方法，并在需要的时候动态地生成一个函数式接口的实例。
 
-假设我们使用上述 `Runnabke` 的匿名内部类的代码进行编译，可以看到结果如下：
+假设我们使用上述 `Runnable` 的匿名内部类的代码进行编译，可以看到结果如下：
 
 ![image-20230827223157677](https://image.itbaima.net/images/40/image-20230827228841886.png)
 
 可以看到， `Main$1.class` 实际上就是 `Main` 类中生成的匿名内部类文件，而将其替换为 `Lambda` 表达式后编译的结果如下：
 
-![image-20230827223307559](C:/Users/lys/AppData/Roaming/Typora/typora-user-images/image-20230827223307559.png)
+![image-20230827224417232](https://image.itbaima.net/images/40/image-20230827222290045.png)
 
 没有生成单独的类文件，即，匿名内部类对应的是一个 `class` 文件，而 `Lambda` 表达式对应的是它所在主类的一个私有方法。
 
